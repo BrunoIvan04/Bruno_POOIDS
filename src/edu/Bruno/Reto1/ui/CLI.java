@@ -1,5 +1,10 @@
 package edu.Bruno.Reto1.ui;
 
+/**
+ * @author bruno
+ * Esta clase contiene diseño del menu y eleccion de operacion aritmetrica
+ */
+
 import edu.Bruno.Reto1.Process.Calculator;
 
 import java.util.Scanner;
@@ -21,7 +26,13 @@ public class CLI{
         System.out.println("Introduce dato 2");
         int num2= scanner.nextInt();
 
+
+        /**
+        * @author bruno
+         * En esta parte eliges los enteros y realiza la operacion elegida anteriormente
+         */
         switch (opcionMenu) {
+
             case 1:
                 System.out.println(num1 + "+" + num2 + "+" + Calculator.sumaEnteros(num1,num2));
                 break;
