@@ -1,9 +1,13 @@
-package edu.Bruno.Reto2.piramide;
+package edu.Bruno.Reto3;
 
-import edu.Bruno.Reto2.piramide.UI.CLI;
+/**
+ * Inicia el menu principal
+ */
+
+import edu.Bruno.Reto3.ui.CLI;
+
 public class Main {
     public static void main(String[]args){
-
         CLI.showMenu();
     }
 }
