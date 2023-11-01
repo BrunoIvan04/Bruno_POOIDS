@@ -1,16 +1,18 @@
 package edu.Bruno.Reto10.Process;
-/**
- * @author bruno
- * En esta clase se realiza la potencia
- */
 
-public class Potencia extends OperacionAritmetica {
-    public Potencia(double operando1, double operando2) {
-        super(operando1, operando2);
-    }
-
+class Potencia extends OperacionAritmetica {
+    //Clase para potencia
     @Override
-    public double calcular() {
-        return Math.pow(operando1, operando2);
+    public double operar(double base, double exponente) {
+        if (exponente < 0) {
+            System.out.println("ERROR: Exponenete negativo no permitido.");
+            return 0;
+        }
+
+        double resultado = 1;
+        for (int i = 0; i < exponente; i++) {
+            resultado = new Multiplicacion().operar(resultado, base);
+        }
+        return resultado;
     }
 }
