@@ -1,21 +1,19 @@
 package edu.Bruno.Reto10.Process;
-/**
- * @author bruno
- * En esta clase se realiza la division
- */
 
-public class Division extends OperacionNoAritmetica {
-    public Division(double operando1, double operando2) {
-        super(operando1, operando2);
-    }
-
+class Division extends OperacionAritmetica {
+    //Clase para la division
     @Override
-    public double calcular() {
-        if (operando2 != 0) {
-            return operando1 / operando2;
-        } else {
-            System.out.println("Error: División por cero.");
-            return Double.NaN;
+    public double operar(double num1, double num2) {
+        if (num2 == 0) {
+            System.out.println("ERROR: Division por cero no es permitida.");
+            return  0;
         }
+
+        double resultado = 0;
+        while (num1 >= num2) {
+            num1 = new Resta().operar(num1, num2);
+            resultado = new Suma().operar(resultado, 1);
+        }
+        return resultado;
     }
 }

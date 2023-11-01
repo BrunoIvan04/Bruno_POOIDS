@@ -1,16 +1,12 @@
 package edu.Bruno.Reto10.Process;
-/**
- * @author bruno
- * En esta clase se realiza la Multiplicacion
- */
 
-public class Multiplicacion extends OperacionAritmetica {
-    public Multiplicacion(double operando1, double operando2) {
-        super(operando1, operando2);
-    }
-
-    @Override
-    public double calcular() {
-        return operando1 * operando2;
+class Multiplicacion extends OperacionAritmetica {
+    //Clase para la multiplicacion
+    public double operar(double num1, double num2) {
+        double resultado = 0;
+        for (int i = 0; i < num2; i++) {
+            resultado = new Suma().operar(resultado, num1);
+        }
+        return resultado;
     }
 }
